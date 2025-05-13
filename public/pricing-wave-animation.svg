@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <defs>
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#waveGradient)" fill-opacity="0.6">
+    <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0,160L48,154.7C96,149,192,139,288,154.7C384,171,480,213,576,208C672,203,768,149,864,138.7C960,128,1056,160,1152,170.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,181.3C672,160,768,128,864,117.3C960,107,1056,117,1152,122.7C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;M0,160L48,154.7C96,149,192,139,288,154.7C384,171,480,213,576,208C672,203,768,149,864,138.7C960,128,1056,160,1152,170.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+  </path>
+  <circle cx="120" cy="100" r="8" fill="#3b82f6" opacity="0.2">
+    <animate attributeName="cy" dur="3s" repeatCount="indefinite" values="100;90;100" />
+  </circle>
+  <circle cx="360" cy="150" r="12" fill="#6366f1" opacity="0.2">
+    <animate attributeName="cy" dur="4s" repeatCount="indefinite" values="150;140;150" />
+  </circle>
+  <circle cx="600" cy="200" r="16" fill="#8b5cf6" opacity="0.2">
+    <animate attributeName="cy" dur="5s" repeatCount="indefinite" values="200;190;200" />
+  </circle>
+</svg>
