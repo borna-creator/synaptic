@@ -6,6 +6,27 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
+    // Validate environment variables
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Email service configuration error' },
+        { status: 500 }
+      );
+    }
+
+    const toEmail = process.env.CONTACT_FORM_TO_EMAIL;
+    const fromEmail = process.env.CONTACT_FORM_FROM_EMAIL;
+
+    if (!toEmail || !fromEmail) {
+      console.error('Missing email configuration:', { toEmail, fromEmail });
+      return NextResponse.json(
+        { error: 'Email service configuration error' },
+        { status: 500 }
+      );
+    }
+
+    // Get form data
     const data = await request.formData();
     const name = data.get('name') as string;
     const email = data.get('email') as string;
@@ -28,33 +49,41 @@ export async function POST(request: Request) {
       );
     }
 
-    // Send email using Resend
-    const { data: emailData, error } = await resend.emails.send({
-      from: process.env.CONTACT_FORM_FROM_EMAIL || 'contact@synapticflow.ai',
-      to: process.env.CONTACT_FORM_TO_EMAIL || 'your-email@example.com',
-      replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    });
+    try {
+      // Send email using Resend
+      const { data: emailData, error } = await resend.emails.send({
+        from: fromEmail,
+        to: toEmail,
+        replyTo: email,
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      });
 
-    if (error) {
-      console.error('Error sending email:', error);
+      if (error) {
+        console.error('Resend API error:', error);
+        return NextResponse.json(
+          { error: 'Failed to send message. Please try again later.' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json(
+        { message: 'Thank you for your message. We will get back to you soon!' },
+        { status: 200 }
+      );
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
       return NextResponse.json(
         { error: 'Failed to send message. Please try again later.' },
         { status: 500 }
       );
     }
-
-    return NextResponse.json(
-      { message: 'Thank you for your message. We will get back to you soon!' },
-      { status: 200 }
-    );
   } catch (error) {
     console.error('Error processing contact form:', error);
     return NextResponse.json(
