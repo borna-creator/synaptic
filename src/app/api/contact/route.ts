@@ -52,9 +52,8 @@ export async function POST(request: Request) {
     try {
       // Send email using Resend
       const { data: emailData, error } = await resend.emails.send({
-        from: 'Darshith <noreply@synapticflow.com>',
+        from: 'Darshith <noreply@synapticflow.in>',
         to: 'Darshith078@gmail.com',
-        replyTo: email,
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
