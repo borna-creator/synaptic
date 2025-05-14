@@ -373,26 +373,25 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="relative overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900 text-white py-12">
-        {/* Simple Background Pattern */}
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,#000_70%,transparent_100%)]"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <div className="text-center md:text-left">
               <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-300 bg-clip-text text-transparent">SynapticFlow</h2>
               <p className="text-gray-400 mt-2">AI voice agents that never sleep</p>
             </div>
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+            <nav className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
               <a href="#features" className="text-gray-300 hover:text-blue-400 transition-colors">Features</a>
               <a href="#pricing" className="text-gray-300 hover:text-blue-400 transition-colors">Pricing</a>
               <a href="#process" className="text-gray-300 hover:text-blue-400 transition-colors">Process</a>
               <a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
-            </div>
+            </nav>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} SynapticFlow. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-400">&copy; {new Date().getFullYear()} SynapticFlow. All rights reserved.</p>
           </div>
         </div>
       </footer>
