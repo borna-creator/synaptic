@@ -13,10 +13,10 @@ export default function Home() {
             <a href="#features" className="text-gray-300 hover:text-blue-400 transition-colors">Features</a>
             <a href="#pricing" className="text-gray-300 hover:text-blue-400 transition-colors">Pricing</a>
             <a href="#process" className="text-gray-300 hover:text-blue-400 transition-colors">Process</a>
-            <a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
+            <a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
           </div>
           <div>
-            <a href="#contact" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition-colors">Get Started</a>
+            <a href="/contact" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition-colors">Get Started</a>
           </div>
         </div>
       </nav>
@@ -51,7 +51,7 @@ export default function Home() {
               </div>
               <p className="text-base md:text-xl text-gray-300 mb-8 leading-relaxed text-center md:text-left px-4 md:px-0">Keep your business connected 24/7 with intelligent AI voice agents that handle calls, capture information, and book appointments—even while you're sleeping. Our advanced AI technology ensures no customer inquiry goes unanswered, helping you convert more leads and provide exceptional service around the clock.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#contact" className="group bg-blue-600 text-white px-8 py-3 rounded-full text-center hover:bg-blue-500 transition-all duration-300 font-medium shadow-lg hover:shadow-blue-500/30">
+                <a href="/contact" className="group bg-blue-600 text-white px-8 py-3 rounded-full text-center hover:bg-blue-500 transition-all duration-300 font-medium shadow-lg hover:shadow-blue-500/30">
                   Schedule a Demo
                   <span className="inline-block ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </a>
@@ -173,73 +173,78 @@ export default function Home() {
       {/* Pricing Section */}
       <section id="pricing" className="relative overflow-hidden py-20 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900 border-b border-gray-700">
         {/* Animated Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
         </div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-16 h-16 bg-indigo-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-purple-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-blue-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-indigo-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
+          <div className="absolute top-20 left-10 w-16 h-16 bg-indigo-500 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-purple-500 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-blue-500 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-indigo-500 rounded-full opacity-10 animate-pulse"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold text-center mb-16 text-white">Simple, Transparent Pricing</h2>
           
-          <div className="max-w-3xl mx-auto bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-gray-700">
-            <div className="p-8 border-b border-gray-700">
-              <h3 className="text-2xl font-bold mb-2 text-white">AI Voice Agent Package</h3>
-              <p className="text-gray-300 mb-6">Everything you need to get started with your AI voice assistant</p>
-              
-              <div className="flex items-baseline mb-6">
-                <span className="text-4xl font-bold text-blue-400">$1,000</span>
-                <span className="text-gray-300 ml-2">/month</span>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-gray-700 relative z-10">
+              <div className="p-8 border-b border-gray-700">
+                <h3 className="text-2xl font-bold mb-2 text-white">AI Voice Agent Package</h3>
+                <p className="text-gray-300 mb-6">Everything you need to get started with your AI voice assistant</p>
+                
+                <div className="flex items-baseline mb-6">
+                  <span className="text-4xl font-bold text-blue-400">$1,000</span>
+                  <span className="text-gray-300 ml-2">/month</span>
+                </div>
+                
+                <div className="mb-6">
+                  <p className="text-gray-300 mb-2">First month: $1,500 (includes setup fee)</p>
+                  <p className="text-gray-300">One-time setup fee: $500</p>
+                </div>
+                
+                <a href="/contact" className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-500 transition-colors font-medium">Get Started</a>
               </div>
               
-              <div className="mb-6">
-                <p className="text-gray-300 mb-2">First month: $1,500 (includes setup fee)</p>
-                <p className="text-gray-300">One-time setup fee: $500</p>
+              <div className="p-8">
+                <h4 className="font-semibold mb-4 text-white">What's included:</h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>24/7 AI voice agent availability</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Calendar integration for appointment booking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Google Spreadsheet integration for data logging</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>English language support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-6 w-6 text-blue-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Customer memory for returning caller recognition</span>
+                  </li>
+                </ul>
+                <p className="mt-6 text-sm text-gray-400">Note: Backend costs (make.com, VAPI, OpenAI) are covered by the customer.</p>
               </div>
-              
-              <a href="#contact" className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-500 transition-colors font-medium">Get Started</a>
-            </div>
-            
-            <div className="p-8">
-              <h4 className="font-semibold mb-4 text-white">What's included:</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>24/7 AI voice agent availability</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Calendar integration for appointment booking</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Google Spreadsheet integration for data logging</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>English language support</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Customer memory for returning caller recognition</span>
-                </li>
-              </ul>
-              <p className="mt-6 text-sm text-gray-400">Note: Backend costs (make.com, VAPI, OpenAI) are covered by the customer.</p>
             </div>
           </div>
         </div>
@@ -361,7 +366,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
             <p className="text-xl text-gray-300 mb-10">Schedule a discovery call today and see how our AI voice agents can transform your business.</p>
-            <a href="#" className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5">Schedule a Demo</a>
+            <a href="/contact" className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5">Schedule a Demo</a>
           </div>
         </div>
       </section>
@@ -383,7 +388,7 @@ export default function Home() {
               <a href="#features" className="text-gray-300 hover:text-blue-400 transition-colors">Features</a>
               <a href="#pricing" className="text-gray-300 hover:text-blue-400 transition-colors">Pricing</a>
               <a href="#process" className="text-gray-300 hover:text-blue-400 transition-colors">Process</a>
-              <a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
+              <a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
